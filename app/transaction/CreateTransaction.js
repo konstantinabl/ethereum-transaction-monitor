@@ -1,5 +1,4 @@
 const EventEmitter = require('events');
-const serialize = require('serialize-javascript');
 const Transaction = require('../../domain/Transaction');
 
 class CreateTransaction extends EventEmitter {
