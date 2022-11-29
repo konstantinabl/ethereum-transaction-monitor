@@ -4,7 +4,7 @@ logs
 
 #.env
 .env
-infrastructure/database/config
+infrastructure/database/config/db.config.js
 .DS_Store
 
 #Dependencies
