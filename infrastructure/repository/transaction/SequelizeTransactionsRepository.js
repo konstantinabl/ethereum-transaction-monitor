@@ -38,6 +38,9 @@ class SequelizeTransactionsRepository {
     let transaction;
     try {
       transaction = await this.TransactionModel.findByPk(id);
+      if (transaction === null) {
+        throw new Error("Couldn't find record");
+      }
       return TransactionMapper.toEntity(transaction);
     } catch (error) {
       throw error;
