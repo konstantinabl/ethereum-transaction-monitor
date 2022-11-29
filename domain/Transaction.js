@@ -42,6 +42,9 @@ const Transaction = attributes({
     type: Date,
     required: true,
   },
+  confirmations: {
+    type: Number,
+  },
   ruleId: {
     type: Number,
     required: true,
@@ -53,7 +56,5 @@ const Transaction = attributes({
     }
   }
 );
-
-Transaction.MIN_ID = 0;
 
 module.exports = Transaction;
