@@ -10,9 +10,6 @@ class CreateTransaction extends EventEmitter {
 
   execute(transactionData) {
     const transaction = new Transaction(transactionData);
-    console.log('Data', transactionData);
-    console.log(transaction.attributes);
-    console.log(transaction);
     this.transactionsRepository
       .add(transaction)
       .then((newTransaction) => {

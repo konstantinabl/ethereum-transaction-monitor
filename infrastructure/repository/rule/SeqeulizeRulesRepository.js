@@ -6,7 +6,6 @@ class SequelizeRulesRepository {
   }
 
   async add(rule) {
-    console.log(this.RuleModel);
     const { valid, error } = rule.validate();
     if (!valid) {
       const error = new Error('ValidationError');
@@ -48,7 +47,6 @@ class SequelizeRulesRepository {
   }
 
   async findLatest() {
-    console.log(await this.RuleModel);
     const rule = await this.RuleModel.findOne({
       where: {},
       order: [['createdAt', 'DESC']],

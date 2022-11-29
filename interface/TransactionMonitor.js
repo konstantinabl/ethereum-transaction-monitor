@@ -16,10 +16,8 @@ class TransactionMonitor {
   async start() {
     await this.getLatestRule();
     this.provider.on('block', async (blockNumber) => {
-      console.log(blockNumber);
       const block = await this.getBlockByNumber(blockNumber);
       const transactions = block.transactions;
-      console.log(this.latestRule);
       if (this.latestRule) {
         transactions.forEach(async (hash) => {
           let transaction = await this.getTransactionByHash(hash);
@@ -83,12 +81,10 @@ class TransactionMonitor {
       updatedAt: '2022-11-22 22:56:53.895',
       ruleId: ruleId,
     };
-    console.log('Transactions');
     const transactionDomain = new TransactionDomain(transaction_model);
     this.transactionsRepository.add(transactionDomain);
   }
-  async getBlockByNumber(blockNumber, provider) {
-    console.log(blockNumber);
+  async getBlockByNumber(blockNumber) {
     try {
       const block = await this.provider.getBlock(blockNumber);
       return block;

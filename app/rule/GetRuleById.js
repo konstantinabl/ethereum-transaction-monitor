@@ -1,4 +1,4 @@
-const EventEmitter = require("events");
+const EventEmitter = require('events');
 
 class GetRuleById extends EventEmitter {
   constructor({ rulesRepository }) {
@@ -7,18 +7,17 @@ class GetRuleById extends EventEmitter {
   }
 
   execute(id) {
-    console.log(id);
     this.rulesRepository
       .findById(id)
       .then((newRule) => {
-        this.emit("SUCCESS", newRule);
+        this.emit('SUCCESS', newRule);
       })
       .catch((error) => {
-        if (error.message === "ValidationError") {
-          return this.emit("VALIDATION_ERROR", error);
+        if (error.message === 'ValidationError') {
+          return this.emit('VALIDATION_ERROR', error);
         }
 
-        this.emit("ERROR", error);
+        this.emit('ERROR', error);
       });
   }
 }

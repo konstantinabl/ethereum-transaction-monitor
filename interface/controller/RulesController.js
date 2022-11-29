@@ -68,7 +68,7 @@ const RulesController = {
         res.status(200).json(rules);
       })
       .on('ERROR', next);
-    console.log('ID PARAM', req.params.id);
+
     updateRule.execute(req.body, req.params.id);
   },
   delete(req, res, next) {

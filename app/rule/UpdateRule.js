@@ -7,7 +7,6 @@ class UpdateRule extends EventEmitter {
   }
 
   execute(data, id) {
-    console.log(data, id);
     this.rulesRepository
       .update(data, id)
       .then((newRule) => {

@@ -9,9 +9,7 @@ class CreateRule extends EventEmitter {
   }
 
   execute(ruleData) {
-    console.log('Rule Data', ruleData);
     const rule = new Rule(ruleData);
-    console.log('Rule in create rule', rule);
     this.rulesRepository
       .add(rule)
       .then((newRule) => {

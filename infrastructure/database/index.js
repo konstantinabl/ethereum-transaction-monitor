@@ -3,8 +3,6 @@ const { Sequelize, DataTypes } = require('sequelize');
 const env = process.env.NODE_ENV || 'development';
 
 const config = dbConfig[env];
-console.log(config);
-console.log(dbConfig.development);
 if (!config) {
   throw new Error('Database configuration not found');
 }

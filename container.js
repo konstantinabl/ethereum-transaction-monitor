@@ -26,11 +26,8 @@ const router = require('./interface/routes');
 const SequelizeTransactionsRepository = require('./infrastructure/repository/transaction/SequelizeTransactionsRepository');
 const SequelizeRulesRepository = require('./infrastructure/repository/rule/SeqeulizeRulesRepository');
 
-// const { database } = require('./infrastructure/database/models');
-// const { rule } = require('./infrastructure/database/models');
-// const { transaction } = require('./infrastructure/database/models');
 const database = require('./infrastructure/database/models');
-console.log('COntianer', database.rules);
+
 const logger = require('./logger/logger');
 const container = createContainer({
   injectionMode: InjectionMode.CLASSIC,
