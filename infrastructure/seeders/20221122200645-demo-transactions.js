@@ -1,7 +1,7 @@
-"use strict";
+'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
-const Chance = require("chance");
+const Chance = require('chance');
 const chance = new Chance();
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -27,13 +27,14 @@ module.exports = {
         value: chance.integer({ min: oneEther, max: fourtyEther }),
         fee: chance.integer({ min: 0, max: oneEther }),
         gasPrice: chance.integer({ min: 0, max: oneEther }),
+        confirmations: 1,
         time: new Date(),
         createdAt: new Date(),
         ruleId: chance.integer({ min: 1, max: 10 }),
       });
     }
 
-    return queryInterface.bulkInsert("Transactions", dummyTransactions, {});
+    return queryInterface.bulkInsert('Transactions', dummyTransactions, {});
   },
 
   async down(queryInterface, Sequelize) {
@@ -43,6 +44,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    return queryInterface.bulkDelete("Transactions", null, {});
+    return queryInterface.bulkDelete('Transactions', null, {});
   },
 };
