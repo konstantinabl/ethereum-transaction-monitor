@@ -5,6 +5,7 @@ logs
 #.env
 .env
 infrastructure/database/config
+.DS_Store
 
 #Dependencies
 node_modules/
