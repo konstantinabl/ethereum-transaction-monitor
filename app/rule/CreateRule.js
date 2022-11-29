@@ -1,5 +1,4 @@
 const EventEmitter = require('events');
-const serialize = require('serialize-javascript');
 const Rule = require('../../domain/Rule');
 
 class CreateRule extends EventEmitter {

@@ -17,7 +17,11 @@ const {
   DeleteRule,
 } = require('./app/rule');
 
-const { CreateTransaction, GetAllTransactions } = require('./app/transaction');
+const {
+  CreateTransaction,
+  GetAllTransactions,
+  GetTransactionById,
+} = require('./app/transaction');
 
 const Server = require('./interface/Server');
 const TransactionMonitor = require('./interface/TransactionMonitor');
@@ -51,6 +55,7 @@ container.register({
 
   createTransaction: asClass(CreateTransaction),
   getAllTransactions: asClass(GetAllTransactions),
+  getTransactionById: asClass(GetTransactionById),
 
   createRule: asClass(CreateRule),
   getAllRules: asClass(GetAllRules),
