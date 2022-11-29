@@ -1,5 +1,6 @@
 const CreateTransaction = require('../../app/transaction/CreateTransaction');
 const GetAllTransactions = require('../../app/transaction/GetAllTransactions');
+const GetTransactionById = require('../../app/transaction/GetTransactionById');
 const TransactionModel =
   require('../../infrastructure/database/models/index').transactions;
 const transactionsRepo = require('../../infrastructure/repository/transaction/SequelizeTransactionsRepository');
@@ -47,7 +48,7 @@ const TransactionsController = {
   },
   getById(req, res, next) {
     transactionsRepository = new transactionsRepo(TransactionModel);
-    const getRuleById = new GetRuleById({ transactionsRepository });
+    const getRuleById = new GetTransactionById({ transactionsRepository });
     getRuleById
       .on('SUCCESS', (rules) => {
         res.status(200).json(rules);

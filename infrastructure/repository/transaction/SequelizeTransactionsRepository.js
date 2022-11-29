@@ -38,7 +38,7 @@ class SequelizeTransactionsRepository {
   async findById(id) {
     let transaction;
     try {
-      transaction = await this.RuleModel.findByPk(id);
+      transaction = await this.TransactionModel.findByPk(id);
       return TransactionMapper.toEntity(transaction);
     } catch (error) {
       throw error;
