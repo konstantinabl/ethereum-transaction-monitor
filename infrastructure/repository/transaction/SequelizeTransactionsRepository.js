@@ -1,5 +1,4 @@
 'use strict';
-const logger = require('../../../logger/logger');
 const TransactionMapper = require('./SequelizeTransactionsMapper');
 class SequelizeTransactionsRepository {
   constructor(TransactionModel) {

@@ -8,6 +8,6 @@ module.exports = (controller) => {
     const Controller = require(controllerPath);
     return Controller.router;
   } catch (error) {
-    this.logger.error(error);
+    logger.error(error);
   }
 };

@@ -1,5 +1,4 @@
 'use strict';
-const { rules } = require('../infrastructure/database/models');
 const TransactionDomain = require('../domain/Transaction');
 const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
