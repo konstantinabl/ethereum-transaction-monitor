@@ -14,6 +14,7 @@ class TransactionMonitor {
   latestRule;
   provider = new ethers.providers.JsonRpcProvider(this.infuraUrl);
   async start() {
+    this.logger.info(`Listening for transactions on node ${this.infuraUrl}`);
     await this.getLatestRule();
     this.provider.on('block', async (blockNumber) => {
       const block = await this.getBlockByNumber(blockNumber);
