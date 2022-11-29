@@ -1,0 +1,10 @@
+#Logs
+logs
+*.log
+
+#.env
+.env
+infrastructure/database/config
+
+#Dependencies
+node_modules/
