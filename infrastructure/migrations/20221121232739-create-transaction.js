@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, DataTypes) {
-    await queryInterface.createTable("Transactions", {
+    await queryInterface.createTable('Transactions', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,27 +15,35 @@ module.exports = {
       },
       hash: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       block: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       from: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       to: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       value: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       fee: {
         type: DataTypes.BIGINT,
+        allowNull: false,
       },
       gasPrice: {
         type: DataTypes.BIGINT,
+        allowNull: false,
       },
       time: {
         type: DataTypes.DATE,
+        allowNull: false,
       },
       createdAt: {
         type: DataTypes.DATE,
@@ -48,15 +56,15 @@ module.exports = {
         type: DataTypes.INTEGER,
         references: {
           model: {
-            tableName: "Rules",
+            tableName: 'Rules',
           },
-          key: "id",
+          key: 'id',
         },
         allowNull: false,
       },
     });
   },
   async down(queryInterface) {
-    await queryInterface.dropTable("Transactions");
+    await queryInterface.dropTable('Transactions');
   },
 };

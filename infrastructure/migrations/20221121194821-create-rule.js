@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, DataTypes) {
-    await queryInterface.createTable("Rules", {
+    await queryInterface.createTable('Rules', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -23,6 +23,7 @@ module.exports = {
       minConfirmations: { type: DataTypes.INTEGER },
       author: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, DataTypes) {
-    await queryInterface.dropTable("Rules");
+    await queryInterface.dropTable('Rules');
   },
 };
